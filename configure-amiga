@@ -1,0 +1,16 @@
+#!/bin/bash
+export glib_cv_stack_grows=no
+export libdir=/opt/m68k-amigaos/lib
+export CXXFLAGS="-noixemul -m68040 -mhard-float -Os -L${libdir}  -Xlinker --allow-multiple-definition -fpermissive -s"
+export CFLAGS="-noixemul -m68040 -mhard-float -Os -L${libdir}  -Xlinker --allow-multiple-definition -s"
+export CC=m68k-amigaos-gcc
+export CXX=m68k-amigaos-g++
+export CPP=m68k-amigaos-cpp
+export AR=m68k-amigaos-ar
+export RANLIB=m68k-amigaos-ranlib
+export STRIP=m68k-amigaos-strip
+export LD=m68k-amigaos-ld
+export LDFLAGS="-noixemul"
+export PKG_CONFIG_LIBDIR=/opt/m68k-amigaos/lib/pkgconfig
+./Configure no-sock no-dgram no-shared no-threads --prefix=/opt/m68k-amigaos gcc "$@"
+#--prefix=/opt/m68k-amigaos/ --host=i686-linux-gnu --build=m68k-amigaos --target=m68k-amigaos --includedir=/opt/m68k-amigaos/include --bindir=/opt/m68k-amigaos/bin --libdir=/opt/m68k-amigaos/lib "$@" 

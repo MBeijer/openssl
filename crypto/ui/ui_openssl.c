@@ -94,9 +94,9 @@
 #  elif !defined(OPENSSL_SYS_VMS) \
 	&& !defined(OPENSSL_SYS_MSDOS) \
 	&& !defined(OPENSSL_SYS_VXWORKS)
-#   define TERMIOS
+#   undef TERMIOS
 #   undef  TERMIO
-#   undef  SGTTY
+#   define  SGTTY
 #  endif
 
 # endif

@@ -42,7 +42,7 @@ int OPENSSL_issetugid(void)
 # ifdef AT_SECURE
     return getauxval(AT_SECURE) != 0;
 # else
-    return getuid() != geteuid() || getgid() != getegid();
+    return -1;//getuid() != geteuid() || getgid() != getegid();
 # endif
 }
 #endif

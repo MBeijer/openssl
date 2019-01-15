@@ -75,7 +75,7 @@ struct servent *PASCAL getservbyname(const char *, const char *);
 #    ifdef OPENSSL_SYS_VXWORKS
 #     include <streams/un.h>
 #    else
-#     include <sys/un.h>
+//#     include <sys/un.h>
 #    endif
 #    ifndef UNIX_PATH_MAX
 #     define UNIX_PATH_MAX sizeof(((struct sockaddr_un *)NULL)->sun_path)
